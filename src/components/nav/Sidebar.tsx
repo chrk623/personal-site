@@ -51,7 +51,7 @@ export const Sidebar = () => {
         </p>
       </div>
 
-      <nav className="mb-8">
+      <nav className="mb-12">
         <ul className="ml-0 list-none space-y-5">
           {NAV_ITEMS.map((item) => (
             <li key={item.id}>
