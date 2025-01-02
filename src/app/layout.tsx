@@ -4,6 +4,9 @@ import { type Metadata } from "next";
 import { TRPCReactProvider } from "@/trpc/react";
 import { ThemeProvider } from "@/components/providers";
 
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 export const metadata: Metadata = {
   title: "Charco Hui",
   description: "Data Scientist & Developer",
@@ -28,7 +31,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <TRPCReactProvider>{children}</TRPCReactProvider>
+          <TRPCReactProvider>
+            {children}
+            <Analytics />
+            <SpeedInsights />
+          </TRPCReactProvider>
         </ThemeProvider>
       </body>
     </html>
