@@ -10,7 +10,7 @@ interface ProjectCardProps {
 
 function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="group rounded-md border border-primary/20 bg-background/50 p-4 transition-all hover:border-primary/40">
+    <div className="rounded-md border border-primary/20 bg-background/50 p-4 transition-all hover:scale-110 hover:border-primary/40">
       <div className="mb-3 flex items-start justify-between">
         <div className="flex items-center gap-2">
           <a
