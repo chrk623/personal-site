@@ -1,15 +1,21 @@
 "use client";
 
-import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRef } from "react";
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+
 import { Button } from "../ui/button";
-import { NAV_ITEMS } from "@/constants/nav";
 import { motion, useInView } from "motion/react";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
+import { NAV_ITEMS } from "@/constants/nav";
+
 export const Sidebar = () => {
+  const router = useRouter();
+  const pathname = usePathname();
   const scrollToSection = useScrollToSection();
 
   const ref = useRef(null);
@@ -57,7 +63,11 @@ export const Sidebar = () => {
             <li key={item.id}>
               <Button
                 variant="ghost"
-                onClick={() => scrollToSection(item.id)}
+                onClick={() =>
+                  pathname === "/"
+                    ? scrollToSection(item.id)
+                    : router.push(`/#${item.id}`)
+                }
                 className="text-md ml-0 font-light text-muted-foreground hover:text-primary"
               >
                 {item.label}
