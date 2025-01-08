@@ -11,6 +11,7 @@ import { motion, useInView } from "motion/react";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
+import { type NavItem } from "@/types";
 import { NAV_ITEMS } from "@/constants/nav";
 
 export const Sidebar = () => {
@@ -20,6 +21,20 @@ export const Sidebar = () => {
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+
+  const onClick = (item: NavItem) => {
+    const target = item.atHome ? `/#${item.id}` : `/${item.id}`;
+
+    if (pathname === "/") {
+      if (item.atHome) {
+        scrollToSection(item.id);
+      } else {
+        router.push(target);
+      }
+    } else {
+      router.push(target);
+    }
+  };
 
   return (
     <div className="fixed left-[10%] top-[100px] hidden lg:block">
@@ -63,12 +78,8 @@ export const Sidebar = () => {
             <li key={item.id}>
               <Button
                 variant="ghost"
-                onClick={() =>
-                  pathname === "/"
-                    ? scrollToSection(item.id)
-                    : router.push(`/#${item.id}`)
-                }
                 className="text-md ml-0 font-light text-muted-foreground hover:text-primary"
+                onClick={() => onClick(item)}
               >
                 {item.label}
               </Button>
