@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu } from "lucide-react";
 import { NAV_ITEMS } from "@/constants/nav";
@@ -12,11 +14,18 @@ import {
 } from "@/components/ui/sheet";
 
 export const MobileNav = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+
   const [open, setOpen] = useState(false);
   const scrollToSection = useScrollToSection();
 
   const handleNavClick = (id: string) => {
-    scrollToSection(id);
+    if (pathname === "/") {
+      scrollToSection(id);
+    } else {
+      router.push(`/#${id}`);
+    }
     setOpen(false);
   };
 
