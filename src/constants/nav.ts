@@ -1,7 +1,8 @@
 export const NAV_ITEMS = [
-  { id: "about", label: "ABOUT" },
-  { id: "experience", label: "EXPERIENCE" },
-  { id: "education", label: "EDUCATION" },
-  { id: "projects", label: "PROJECTS" },
-  { id: "skills", label: "SKILLS" },
+  { id: "about", label: "ABOUT", atHome: true },
+  { id: "experience", label: "EXPERIENCE", atHome: true },
+  { id: "education", label: "EDUCATION", atHome: true },
+  { id: "projects", label: "PROJECTS", atHome: true },
+  { id: "skills", label: "SKILLS", atHome: true },
+  { id: "blog", label: "BLOG", atHome: false },
 ];

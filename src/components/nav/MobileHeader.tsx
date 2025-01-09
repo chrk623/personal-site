@@ -13,7 +13,6 @@ export const MobileHeader = () => {
           height={50}
           unoptimized
         />{" "}
-        {/* <h1 className="text-2xl font-semibold text-foreground">Charco Hui</h1> */}
         <div className="flex items-center gap-4">
           <ThemeToggle />
           <MobileNav />

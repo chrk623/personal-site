@@ -23,3 +23,9 @@ export interface ProjectItemType {
   link?: string;
   stars?: number;
 }
+
+export interface NavItem {
+  id: string;
+  label: string;
+  atHome: boolean;
+}
