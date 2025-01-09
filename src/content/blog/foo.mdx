@@ -1,0 +1,51 @@
+---
+title: Example Blog and Template
+description: How to use and format the `md` file
+date: 01-09-2025
+image: "/blog/first-blog/eyes.jpg"
+---
+
+Frontmatter is placed at the top of the MDX file between sets of three hyphens (---). Each frontmatter field should be placed on its own line. Example:
+```md
+---
+title: title (required)
+description: description (required)
+date: MM-DD-YYYY (required)
+image: "/blog/foo/bar.png" (optional)
+---
+```
+
+Images should be placed in the `public` folder, and the path should always be relative and starts with a `/`, i.e, `/blog/<slug>/*.png`
+
+Reference [here](https://kabartolo.github.io/chicago-docs-demo/docs/mdx-guide/writing/).
+
+## Examples
+
+### Image
+
+![alt text](/blog/first-blog/eyes.jpg)
+
+
+### Autolink literals
+
+www.example.com, https://example.com, and contact@example.com.
+
+### Footnote
+
+A note[^1]
+
+[^1]: Big note.
+
+### Strikethrough
+
+~one~ or ~~two~~ tildes.
+
+### Table
+
+| a | b  |  c |  d  |
+| - | :- | -: | :-: |
+
+### Tasklist
+
+* [ ] to do
+* [x] done
