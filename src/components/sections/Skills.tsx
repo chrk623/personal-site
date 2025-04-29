@@ -15,7 +15,7 @@ const ThreeScene = dynamic(() => import("../skills-anim/ThreeScene"), {
 export const Skills = () => {
   return (
     <section id="skills" className="mb-24">
-      <SectionHeader number="05" title="Skills" />
+      <SectionHeader number="06" title="Skills" />
       <ThreeScene />
     </section>
   );

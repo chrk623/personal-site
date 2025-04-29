@@ -3,6 +3,7 @@ import type {
   ExperienceItemType,
   ProjectItemType,
   EducationItemType,
+  PublicationItemType,
 } from "@/types";
 
 export const EDUCATION_DATA: EducationItemType[] = [
@@ -317,5 +318,16 @@ export const PROJECTS_DATA: ProjectItemType[] = [
     language: "R",
     link: "https://github.com/chrk623",
     stars: 12,
+  },
+];
+
+export const PUBLICATION_DATA: PublicationItemType[] = [
+  {
+    paperTitle:
+      "Batch Aggregation: An Approach to Enhance Text Classification with Correlated Augmented Data",
+    year: "2025",
+    url: "https://arxiv.org/abs/2504.05020",
+    description:
+      "A technique which improves text classification by modelling correlation between augmented texts, significantly boosting accuracy in specialized domains when labeled data is limited.",
   },
 ];

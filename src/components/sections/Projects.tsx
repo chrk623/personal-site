@@ -50,7 +50,7 @@ function ProjectCard({ project }: ProjectCardProps) {
 export const Projects = () => {
   return (
     <section id="projects" className="mb-24">
-      <SectionHeader number="04" title="Projects" />
+      <SectionHeader number="05" title="Projects" />
       <div className="space-y-12">
         {PROJECTS_DATA.map((project: ProjectItemType, index: number) => (
           <ProjectCard project={project} key={index} />

@@ -24,6 +24,13 @@ export interface ProjectItemType {
   stars?: number;
 }
 
+export interface PublicationItemType {
+  paperTitle: string;
+  year: string;
+  url: string;
+  description?: string;
+}
+
 export interface NavItem {
   id: string;
   label: string;
